@@ -35,3 +35,10 @@ services:
       - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
+
+  mailpit:
+    container_name: mailpit
+    build: ./docker/mailpit
+    ports:
+      - 1025:1025/tcp
+      - 8025:8025/tcp
