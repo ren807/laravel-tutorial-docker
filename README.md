@@ -17,9 +17,11 @@
 13. ``chown www-data storage/ -R``でstorage配下の所有者を変更
 14. ``php artisan key:generate``でAPP_KEYを生成
 15. ``npm run dev``
+16. ``http://localhost:8000/``にアクセス
 
 ## 2回目以降
 
 1. ``docker-compose up -d``でコンテナを起動
 2. ``docker-compose exec app bash``でappコンテナに入る
 3. ``npm run dev``
+4. ``http://localhost:8000/``にアクセス
