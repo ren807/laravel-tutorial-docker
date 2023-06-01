@@ -10,7 +10,7 @@
 6. ``cd ../../``で/ディレクトリに移動
 7. ``docker-compose build``でイメージを作成
 8. ``docker-compose up -d``でコンテナを作成・起動
-9. ``docker-compose exec app bash``でappコンテナに入る
+9. ``docker exec -it laravel-tutorial-app /bin/bash``でappコンテナに入る
 10. ``npm install``でパッケージをインストール
 11. ``comopser install``でパッケージをインストール
 12. /laravel-projectディレクトリに.envファイルを作成 ( .env.exampleファイルをコピー )
