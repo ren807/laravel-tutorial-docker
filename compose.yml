@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: app
+    container_name: laravel-tutorial-app
     build: ./docker/php
     volumes:
       - .:/var/www
@@ -9,7 +9,7 @@ services:
 
   nginx:
     image: nginx
-    container_name: nginx
+    container_name: laravel-tutorial-nginx
     ports:
       - 8000:80
     volumes:
@@ -21,11 +21,10 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: db
+    container_name: laravel-tutorial-db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: laravel
-      MYSQL_USER: root
       MYSQL_PASSWORD: root
       TZ: 'Asia/Tokyo'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -37,7 +36,7 @@ services:
       - 3306:3306
 
   mailpit:
-    container_name: mailpit
+    container_name: laravel-tutorial-mailpit
     build: ./docker/mailpit
     ports:
       - 1025:1025/tcp
