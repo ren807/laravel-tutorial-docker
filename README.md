@@ -59,8 +59,12 @@ https://qiita.com/syisdreaming/items/ffa4843a1804140fbf26
 docker/nginx/default.confを以下のように修正。
 
 ```diff
-- try_files $uri $uri/ /index.php$query_string;
-+ try_files $uri $uri/ /index.php?$query_string;
+	location / {
+		root /var/www/laravel-project/public;
+		index index.php;
+- 		try_files $uri $uri/ /index.php$query_string;
++ 		try_files $uri $uri/ /index.php?$query_string;
+	}
 ```
 
 参考：https://qiita.com/yuuum/items/0b0591bd558f8cd13851
