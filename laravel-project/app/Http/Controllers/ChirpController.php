@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use illuminate\View\View;
 
 class ChirpController extends Controller
 {
+	// 1ページ当たりのChirpsの個数
+	const CHIRPS_NUM_PER_PAGE = 3;
+
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index(): View
+	public function index(Request $request): View
 	{
 		return view('chirps.index', [
-			'chirps' => Chirp::with('user')->latest()->get(),
+			'chirps' => Chirp::with('user')->latest()->paginate(self::CHIRPS_NUM_PER_PAGE),
 		]);
 	}
 

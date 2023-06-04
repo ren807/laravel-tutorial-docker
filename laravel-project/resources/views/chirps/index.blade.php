@@ -54,5 +54,6 @@
 				</div>
 			@endforeach
 		</div>
+		{{ $chirps->links() }}
 	</div>
 </x-app-layout>
