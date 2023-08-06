@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->text('content')->comment('投稿内容');
+            $table->unsignedTinyInteger('deleted_flag')->default(0)->comment('削除フラグ デフォルト：0 削除：1');
             $table->timestamps();
         });
     }
