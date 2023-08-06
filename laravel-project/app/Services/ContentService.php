@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ContentService
 {
-	private $contentRepository = '';
+	private $contentRepository;
 
 	public function __construct(ContentRepository $contentRepository)
 	{
-		$this->contentRepository = $contentRepository;
+		$this->contentRepository = $contentRepository ?: new \stdClass();
 	}
 
 	/**
